@@ -1,0 +1,5 @@
+The data used in this report come from the ENTSO-E Transparency Platform, under item \texttt{EnergyPrices\_12.1.D\_r3}. This dataset provides day-ahead electricity prices for each bidding zone and each market time unit, in currency per MWh. We downloaded the 12 monthly files corresponding to the year 2025 and concatenated them into a single panel dataset.
+
+We then filtered the data to retain only the French and German bidding zones and restricted attention to hourly day-ahead observations. Timestamps were recorded in UTC and were carefully standardized before analysis. After merging the monthly files and removing possible duplicates by market zone and timestamp, we obtained two synchronized hourly series covering the full year 2025.
+
+The final cleaned dataset serves as the common empirical basis for all parts of the report. This is important because the time-series, extreme-value, copula, and Hawkes analyses should not be viewed as separate projects, but as complementary perspectives on the same underlying market dynamics.

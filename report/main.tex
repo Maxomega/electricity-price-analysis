@@ -1,0 +1,219 @@
+\documentclass[11pt, a4paper]{article}
+
+% === PACKAGES ===
+\usepackage{arxiv}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{amsfonts}
+\usepackage{nicefrac}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{natbib}
+\usepackage{doi}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{subcaption}
+\usepackage[nomarkers,notables]{endfloat}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue!70!black},
+  commentstyle=\color{gray!70!black},
+  stringstyle=\color{orange!80!black},
+  showstringspaces=false,
+  frame=single,
+  numbers=left,
+  numberstyle=\tiny,
+  numbersep=6pt,
+  columns=fullflexible,
+  breaklines=true,
+  extendedchars=true,
+  inputencoding=utf8,
+  literate={α}{{\(\alpha\)}}1
+           {β}{{\(\beta\)}}1
+           {γ}{{\(\gamma\)}}1
+           {δ}{{\(\delta\)}}1
+           {ε}{{\(\epsilon\)}}1
+           {λ}{{\(\lambda\)}}1
+           {μ}{{\(\mu\)}}1
+           {π}{{\(\pi\)}}1
+           {σ}{{\(\sigma\)}}1
+           {τ}{{\(\tau\)}}1
+           {φ}{{\(\phi\)}}1
+           {ψ}{{\(\psi\)}}1
+           {∈}{{\(\in\)}}1
+           {∑}{{\(\sum\)}}1
+           {Σ}{{\(\Sigma\)}}1
+           {∏}{{\(\prod\)}}1
+           {√}{{\(\sqrt\)}}1
+           {ℓ}{{\(\ell\)}}1
+           {η}{{\(\eta\)}}1
+}
+
+% === MACROS ===
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{definition}{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+
+% === RUNNING HEADERS ===
+\renewcommand{\shorttitle}{Day-Ahead Electricity Prices FR-DE}
+\fancypagestyle{main}{%
+  \fancyhf{}
+  \fancyhead[L]{\shorttitle}
+  \fancyhead[R]{\scshape Statistical Report}
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+% === METADATA ===
+\title{Dependence, Extremes, and Temporal Clustering in\\
+French and German Day-Ahead Electricity Prices in 2025}
+
+\author{
+    Lucas Jung \\
+    Graduate Student in Artificial Intelligence \\
+    École Polytechnique \\
+    Palaiseau, France \\
+    \texttt{lucas.jung@polytechnique.org} \\
+    \And
+    Thaïs Roussel \\
+    Graduate Student in Applied Mathematics \\
+    École Polytechnique \\
+    Palaiseau, France \\
+    \texttt{thais.roussel@polytechnique.edu} \\
+    \And
+    Maxime Puech \\
+    Graduate Student in Applied Mathematics \\
+    École Polytechnique \\
+    Palaiseau, France \\
+    \texttt{maxime.puech@polytechnique.edu} \\
+}
+
+\begin{document}
+\maketitle
+\pagestyle{main}
+
+\begin{abstract}
+This report studies hourly day-ahead electricity prices in France and Germany over the year 2025 using data from the ENTSO-E Transparency Platform. Our objective is to understand how market tensions appear, how they persist over time, and how they propagate across the two markets. To do so, we build a unified statistical analysis around a single dataset and a single research question: when the market becomes stressed, do French and German prices become more dependent, and do extreme episodes cluster in time?
+
+We first clean and synchronize the hourly series, then study their temporal structure through standard linear time-series tools. We next analyze extreme price events using methods from extreme value theory in order to characterize rare positive spikes and negative prices, and to define meaningful thresholds for subsequent event-based modeling. We then investigate the cross-market dependence structure using copulas, comparing Gaussian, Gumbel, and Clayton specifications in both calm and stressed regimes. Finally, we model the temporal clustering of extreme events through univariate and bivariate Hawkes processes, which allow us to distinguish exogenous shocks from endogenous excitation and to quantify cross-market propagation.
+
+Our results highlight three main features of the French-German day-ahead market in 2025: a strong common temporal structure, a dependence pattern that becomes especially relevant in the tails, and a clear clustering of extreme events over time. Together, these findings show that the interaction between the two markets cannot be reduced to simple linear correlation alone, but involves asymmetric tail dependence and self-exciting dynamics that are important for understanding stress episodes in the European electricity system.
+\end{abstract}
+
+% ==========================================
+% 1. INTRODUCTION
+% ==========================================
+\section{Introduction}
+\label{sec:intro}
+\input{sections/1_intro}
+
+% ==========================================
+% 2. DATA AND PREPROCESSING
+% ==========================================
+\section{Data and Preprocessing}
+\label{sec:data}
+\input{sections/2_data}
+
+% ==========================================
+% 3. LINEAR TIME SERIES
+% ==========================================
+\section{Linear Time-Series Analysis}
+\label{sec:timeseries}
+\input{sections/3_timeseries}
+
+The linear time-series analysis provides the first description of the marginal dynamics of the two series. However, average dynamics are not sufficient to characterize market stress episodes, which motivates a specific focus on extreme observations.
+
+% ==========================================
+% 4. EXTREMES
+% ==========================================
+\section{Extreme-Value Analysis}
+\label{sec:extremes}
+\input{sections/4_extremes}
+
+Once the marginal behavior of the series has been studied, the next step is to examine their dependence structure. This motivates the copula approach, which separates the marginal distributions from the joint dependence pattern.
+
+% ==========================================
+% 5. COPULAS
+% ==========================================
+\section{Copula-Based Dependence Analysis}
+\label{sec:copulas}
+\input{sections/5_copulas}
+
+% ==========================================
+% 6. HAWKES PROCESSES
+% ==========================================
+\section{Hawkes Processes for Extreme Event Clustering}
+\label{sec:hawkes}
+\input{sections/6_hawkes}
+
+% ==========================================
+% 7. RESULTS AND DISCUSSION
+% ==========================================
+\section{Results and Discussion}
+\label{sec:results}
+\input{sections/7_results}
+
+% ==========================================
+% 8. DATA AND CODE AVAILABILITY
+% ==========================================
+\section*{Data and Code Availability}
+
+The data used in this report come from the ENTSO-E Transparency Platform, item \texttt{EnergyPrices\_12.1.D\_r3}, which provides day-ahead electricity prices by bidding zone and market time unit. The monthly files for 2025 can be accessed through the ENTSO-E file library at:
+
+\url{https://transparency.entsoe.eu/fileLibrary/fileBrowserMode?appState=\%7B\%22path\%22\%3A\%22\%2FTP_export\%2FEnergyPrices_12.1.D_r3\%2F\%22\%7D}
+
+The analysis was carried out in Python. In accordance with the course instructions, code is not included in the main report but was used to generate all tables and figures.
+
+% ==========================================
+% 9. CONCLUSION
+% ==========================================
+\section{Conclusion}
+\label{sec:conclusion}
+
+In this report, we studied French and German day-ahead electricity prices in 2025 through a unified statistical framework combining linear time-series methods, extreme-value analysis, copulas, and Hawkes processes. This organization made it possible to move progressively from marginal temporal structure, to tail behavior, to cross-sectional dependence, and finally to temporal clustering of extreme events.
+
+Our results suggest that the French and German markets are linked by more than average co-movement. In particular, dependence becomes especially informative during stress episodes, where tail behavior and event clustering matter more than standard correlation. The copula analysis highlights asymmetric dependence patterns, while the Hawkes analysis shows that extreme events are not isolated but tend to propagate over time and, to some extent, across markets.
+
+More broadly, the report illustrates the value of combining several tools from the course around a single coherent empirical question. Rather than presenting a juxtaposition of methods, we show that each technique answers a distinct part of the same problem: temporal dynamics, extreme risk, dependence structure, and self-excitation. This makes the French-German electricity market a natural and informative case study for statistical analysis in 2025.
+
+% ==========================================
+% 10. ACKNOWLEDGMENTS
+% ==========================================
+\section*{Acknowledgments}
+
+We thank Mathieu Rosenbaum and the instructors of the course for their lectures and guidance. We also thank École Polytechnique for providing the academic environment in which this project was developed.
+
+% ==========================================
+% 11. AUTHOR CONTRIBUTIONS
+% ==========================================
+\section*{Author Contributions}
+
+\textbf{Maxime Puech} conducted the linear time-series analysis, including the study of hourly and weekly seasonality, autocorrelation structure, and the preparation of transformed series used in later sections.
+
+\textbf{Thaïs Roussel} carried out the extreme-value analysis, including the study of negative prices, large positive spikes, threshold exceedances, and the statistical characterization of rare events used to motivate the event definitions in the Hawkes section.
+
+\textbf{Lucas Jung} conducted the copula-based dependence analysis and the Hawkes-process analysis, including the construction of pseudo-observations, the estimation and comparison of Gaussian, Gumbel, and Clayton copulas, and the modeling of temporal clustering and cross-excitation of extreme events.
+
+All authors contributed to the interpretation of results, discussed the overall empirical strategy, and reviewed the final manuscript.
+
+% ==========================================
+% REFERENCES
+% ==========================================
+\bibliographystyle{plainnat}
+\bibliography{references.bib}
+
+\end{document}

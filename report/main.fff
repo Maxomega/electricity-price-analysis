@@ -1,0 +1,62 @@
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.96\textwidth]{figures/copula_scatter.png}
+    \caption{Left: scatter plot of de-seasonalized hourly price variations in France and Germany. Right: pseudo-observations \((\hat U_t, \hat V_t)\) used for copula estimation.}
+    \label{fig:copula_scatter}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.58\textwidth]{figures/copula_heatmap.png}
+    \caption{Empirical copula heatmap based on the pseudo-observations.}
+    \label{fig:copula_heatmap}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/copula_contour.png}
+    \caption{Fitted copula contours for the Gaussian, Gumbel, and Clayton models.}
+    \label{fig:copula_contours}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/copula_concentration.png}
+    \caption{Empirical lower-tail and upper-tail concentration functions across regimes.}
+    \label{fig:tail_concentration}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/hawkes_negative_timeline.png}
+    \caption{Timeline of negative-price events in France and Germany over the full sample.}
+    \label{fig:hawkes_negative_timeline}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/hawkes_negative_intensity.png}
+    \caption{Estimated univariate Hawkes intensities for negative-price events in France and Germany.}
+    \label{fig:hawkes_negative_intensity}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/hawkes_negative_matrix.png}
+    \caption{Estimated excitation matrix for the bivariate Hawkes model on negative-price events.}
+    \label{fig:hawkes_negative_matrix}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/hawkes_negative_zoom.png}
+    \caption{Zoom on a tense week for negative-price events and fitted bivariate intensities.}
+    \label{fig:hawkes_negative_zoom}
+\end{figure}

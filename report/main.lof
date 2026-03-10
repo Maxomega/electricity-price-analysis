@@ -1,0 +1,8 @@
+\contentsline {figure}{\numberline {1}{\ignorespaces Left: scatter plot of de-seasonalized hourly price variations in France and Germany. Right: pseudo-observations \((\hat U_t, \hat V_t)\) used for copula estimation.}}{10}{figure.caption.14}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Empirical copula heatmap based on the pseudo-observations.}}{11}{figure.caption.15}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Fitted copula contours for the Gaussian, Gumbel, and Clayton models.}}{12}{figure.caption.16}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Empirical lower-tail and upper-tail concentration functions across regimes.}}{13}{figure.caption.17}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Timeline of negative-price events in France and Germany over the full sample.}}{14}{figure.caption.18}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Estimated univariate Hawkes intensities for negative-price events in France and Germany.}}{15}{figure.caption.19}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Estimated excitation matrix for the bivariate Hawkes model on negative-price events.}}{16}{figure.caption.20}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Zoom on a tense week for negative-price events and fitted bivariate intensities.}}{17}{figure.caption.21}%
